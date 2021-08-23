@@ -14,7 +14,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #cccccc;
 }
 
 .wrapper {
@@ -116,6 +116,12 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+}
+
+
+
+p {
+  display: inline;
 }
 
 @media (max-width: 690px) {
