@@ -22,19 +22,28 @@ function libraryCreator() {
   var upperList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var specialList = '!@#$%&*?';
 
-  if (numBoolean) library = library + digitList
-  if (lowerBoolean) library = library + lowerList
-  if (upperBoolean) library = library + upperList
-  if (specialBoolean) library = library + specialList
+  if (numBoolean) library = library + digitList;
+  if (lowerBoolean) library = library + lowerList;
+  if (upperBoolean) library = library + upperList;
+  if (specialBoolean) library = library + specialList;
 
-  return library 
+  return library;
+};
+
+function randomNumberGenerator(maxNum) {
+  var randomNum = Math.floor(Math.random()*maxNum)
+  return randomNum
+}
+
+function passwordCreator() {
+  // init library
+  //
 }
 
 // Write password to the #password input
 function writePassword() {
 
-  var library = libraryCreator()
-  console.log(library)
+  console.log(randomNumberGenerator())
 
   // var password = generatePassword();
 //   var passwordText = document.querySelector("#password");
