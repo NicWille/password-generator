@@ -42,28 +42,15 @@ function passwordCreator() {
   for (let i=0; i<amountNumber; i++) {
     password = password + library[randomNumberGenerator(library.length)];
   };
-  
+
   return password;
 }
 
+function passwordWriter() {
+  let password = passwordCreator();
+  let passwordText = document.querySelector("#password");
 
-
-
-// Write password to the #password input
-function writePassword() {
-
-console.log(passwordCreator())
-
-  // let password = generatePassword();
-//   let passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
+  passwordText.value = password;
 }
 
-
-
-
-
-
-// event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", passwordWriter);
