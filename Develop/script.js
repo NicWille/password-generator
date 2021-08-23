@@ -1,52 +1,61 @@
 // references to the # elements
-var amount = document.querySelector("#amount");
-var lowercase = document.querySelector("#lowercase");
-var uppercase = document.querySelector("#uppercase");
-var number = document.querySelector("#number");
-var special = document.querySelector("#special");
-var generateBtn = document.querySelector("#generate");
-
-var amountNumber = +amount.value;
+let amount = document.querySelector("#amount");
+let lowercase = document.querySelector("#lowercase");
+let uppercase = document.querySelector("#uppercase");
+let number = document.querySelector("#number");
+let special = document.querySelector("#special");
+let generateBtn = document.querySelector("#generate");
 
 function libraryCreator() {
 
-  var library = '';
+  let library = '';
 
-  var lowerBoolean = lowercase.checked;
-  var upperBoolean = uppercase.checked;
-  var numBoolean = number.checked;
-  var specialBoolean = special.checked;
+  let lowerBoolean = lowercase.checked;
+  let upperBoolean = uppercase.checked;
+  let numBoolean = number.checked;
+  let specialBoolean = special.checked;
 
-  var digitList = '0123456789';
-  var lowerList = 'abcdefghijklmnopqrstuvwxyz';
-  var upperList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  var specialList = '!@#$%&*?';
+  let digitList = '0123456789';
+  let lowerList = 'abcdefghijklmnopqrstuvwxyz';
+  let upperList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let specialList = '!@#$%&*?';
 
   if (numBoolean) library = library + digitList;
   if (lowerBoolean) library = library + lowerList;
   if (upperBoolean) library = library + upperList;
   if (specialBoolean) library = library + specialList;
 
-  return library;
+  return library.split('');
 };
 
 function randomNumberGenerator(maxNum) {
-  var randomNum = Math.floor(Math.random()*maxNum)
-  return randomNum
-}
+  let randomNum = Math.floor(Math.random()*maxNum);
+
+  return randomNum;
+};
 
 function passwordCreator() {
-  // init library
-  //
+  let password = '';
+  let amountNumber = +amount.value;
+  let library = libraryCreator();
+
+  for (let i=0; i<amountNumber; i++) {
+    password = password + library[randomNumberGenerator(library.length)];
+  };
+  
+  return password;
 }
+
+
+
 
 // Write password to the #password input
 function writePassword() {
 
-  console.log(randomNumberGenerator())
+console.log(passwordCreator())
 
-  // var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+  // let password = generatePassword();
+//   let passwordText = document.querySelector("#password");
 
 //   passwordText.value = password;
 }
