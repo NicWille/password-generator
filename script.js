@@ -18,7 +18,7 @@ function libraryCreator() {
   let digitList = '0123456789';
   let lowerList = 'abcdefghijklmnopqrstuvwxyz';
   let upperList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  let specialList = '!@#$%&*';
+  let specialList = '!@#$%&*+=<>^&-~';
 
   if (numBoolean) library = library + digitList;
   if (lowerBoolean) library = library + lowerList;
